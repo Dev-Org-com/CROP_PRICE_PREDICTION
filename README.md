@@ -38,7 +38,7 @@ To run the code in this project, you'll need:
 
 You can install the dependencies using pip:
 
-       pip install pandas matplotlib seaborn scikit-learn statsmodels
+      pip install pandas numpy matplotlib seaborn scikit-learn
 
 
 ## Data Description

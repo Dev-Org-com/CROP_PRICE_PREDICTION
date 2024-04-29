@@ -25,6 +25,9 @@ This project analyzes wholesale food prices in Kenya, specifically for various c
 - Joyce Muthiani
 - Kenneth Karanja
 - Amina Hagi
+
+![alt text](<crop prediction image.jpg>)
+
 ## INTRODUCTION
 At Datawise Solutions, we specialize in offering cutting-edge data analytics and consulting services to help organizations of all sizes use the value of their data. With a team of professional data scientists, analysts, and consultants, we are committed to assisting organizations in gaining important insights, making educated decisions, and driving growth.
 

@@ -4,42 +4,27 @@ This project analyzes wholesale food prices in Kenya, specifically for various c
 ## Table of Contents
 
 - [Features](#features)
+- [Authors](#Authors)
 - [Usage](#Usage)
 - [Installation](#installation)
 - [Data Description](#Data-Description)
 - [Data Preprocessing](#Data-Preprocessing)
 - [Analysis and Visualization](#Analysis-and-Visualization)
 - [Contributing](#contributing)
-- [Authors](#Authors)
-
 ## Features
 - Data cleaning and preprocessing
 - Exploratory data analysis (EDA)
 - Feature engineering
 - Outlier detection and removal
 - Data visualization
-- Potential machine learning model building (if applicable)
-
-## Usage
-1. Clone the repository.
-
-          git clone git@github.com:pseudocmd/Phase5-project.git
-3. Install the required dependencies.
-4. Run the Jupyter Notebook or Python script to execute the code.
-5. Follow the instructions and comments in the code for specific tasks or analyses.
-
-## Installation
-To run the code in this project, you'll need:
-- Python 3
-- numpy
-- matplotlib
-- seaborn
-- scikit-learn
-
-You can install the dependencies using pip:
-
-      pip install pandas numpy matplotlib seaborn scikit-learn
-
+- Machine learning model
+## Authors
+- Milton Kabute
+- Collins Cheruiyot
+- Thorne Makau
+- Joyce Muthiani
+- Kenneth Karanja
+- Amina Hagi
 ## INTRODUCTION
 At Datawise Solutions, we specialize in offering cutting-edge data analytics and consulting services to help organizations of all sizes use the value of their data. With a team of professional data scientists, analysts, and consultants, we are committed to assisting organizations in gaining important insights, making educated decisions, and driving growth.
 
@@ -113,6 +98,24 @@ The analysis and visualization techniques employed in this project include:
 - Scatter plots to explore relationships between price, supply volume, and USD rate
 - Line charts to visualize trends over time for price and USD rate
 - Statistical analysis to identify correlations and trends
+## Usage
+1. Clone the repository.
+
+          git clone git@github.com:pseudocmd/Phase5-project.git
+3. Install the required dependencies.
+4. Run the Jupyter Notebook or Python script to execute the code.
+5. Follow the instructions and comments in the code for specific tasks or analyses.
+## Installation
+To run the code in this project, you'll need:
+- Python 3
+- numpy
+- matplotlib
+- seaborn
+- scikit-learn
+
+You can install the dependencies using pip:
+
+      pip install pandas numpy matplotlib seaborn scikit-learn
 
 ## Contributing
 We welcome contributions from the community. If you'd like to contribute to this project, please follow these steps:

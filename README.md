@@ -101,6 +101,39 @@ The analysis and visualization techniques employed in this project include:
 - Scatter plots to explore relationships between price, supply volume, and USD rate
 - Line charts to visualize trends over time for price and USD rate
 - Statistical analysis to identify correlations and trends
+![alt text](image.png)
+
+
+![alt text](image-1.png)
+
+
+![alt text](image-2.png)
+
+
+
+![alt text](image-4.png)
+
+The correlation heatmap shows the correlation coefficients between the variables 'usd_rate', 'Wholesale Price', and 'Supply Volume'. Here's what each correlation coefficient represents:
+
+usd_rate vs. Wholesale Price: This correlation coefficient indicates the linear relationship between the exchange rate of USD and the wholesale price of the products. A positive value suggests a positive correlation, meaning that as the USD rate increases, the wholesale price tends to increase as well. Conversely, a negative value suggests a negative correlation.
+
+usd_rate vs. Supply Volume: This correlation coefficient indicates the linear relationship between the exchange rate of USD and the supply volume of the products. Similarly, a positive value suggests a positive correlation, meaning that as the USD rate increases, the supply volume tends to increase as well. A negative value suggests a negative correlation.
+
+Wholesale Price vs. Supply Volume: This correlation coefficient indicates the linear relationship between the wholesale price and the supply volume of the products. Again, a positive value suggests a positive correlation, meaning that as the wholesale price increases, the supply volume tends to increase as well. A negative value suggests a negative correlation.
+
+The values range from -1 to 1, where:
+
+-1 indicates a perfect negative correlation,
+
+0 indicates no correlation, and
+
+1 indicates a perfect positive correlation.
+
+![alt text](image-5.png)
+
+
+
+
 ## Usage
 1. Clone the repository.
 

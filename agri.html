@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wholesale Price Prediction</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            background-image: url(/pexels-pixabay-265216.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0.9;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        button:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+        }
+
+        .result p {
+            margin: 0;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wholesale Price Prediction</h1>
+        <form action="/predict" method="POST">
+            <!-- County Field with Kenyan Counties -->
+            <label for="county">County:</label>
+            <select id="county" name="county" onchange="updateMarketOptions()" required>
+                <option value="">Select a county</option>
+                <option value="Baringo">Baringo</option>
+                <option value="Bomet">Bomet</option>
+                <option value="Bungoma">Bungoma</option>
+                <option value="Busia">Busia</option>
+                <option value="Elgeyo-Marakwet">Elgeyo-Marakwet</option>
+                <option value="Embu">Embu</option>
+                <option value="Garissa">Garissa</option>
+                <option value="Homa Bay">Homa Bay</option>
+                <option value="Isiolo">Isiolo</option>
+                <option value="Kajiado">Kajiado</option>
+                <option value="Kakamega">Kakamega</option>
+                <option value="Kericho">Kericho</option>
+                <option value="Kiambu">Kiambu</option>
+                <option value="Kilifi">Kilifi</option>
+                <option value="Kirinyaga">Kirinyaga</option>
+                <option value="Kisii">Kisii</option>
+                <option value="Kisumu">Kisumu</option>
+                <option value="Kitui">Kitui</option>
+                <option value="Kwale">Kwale</option>
+                <option value="Laikipia">Laikipia</option>
+                <option value="Lamu">Lamu</option>
+                <option value="Machakos">Machakos</option>
+                <option value="Makueni">Makueni</option>
+                <option value="Mandera">Mandera</option>
+                <option value="Marsabit">Marsabit</option>
+                <option value="Meru">Meru</option>
+                <option value="Migori">Migori</option>
+                <option value="Mombasa">Mombasa</option>
+                <option value="Murang'a">Murang'a</option>
+                <option value="Nairobi">Nairobi</option>
+                <option value="Nakuru">Nakuru</option>
+                <option value="Nandi">Nandi</option>
+                <option value="Narok">Narok</option>
+                <option value="Nyamira">Nyamira</option>
+                <option value="Nyandarua">Nyandarua</option>
+                <option value="Nyeri">Nyeri</option>
+                <option value="Samburu">Samburu</option>
+                <option value="Siaya">Siaya</option>
+                <option value="Taita Taveta">Taita Taveta</option>
+                <option value="Tana River">Tana River</option>
+                <option value="Tharaka-Nithi">Tharaka-Nithi</option>
+                <option value="Trans Nzoia">Trans Nzoia</option>
+                <option value="Turkana">Turkana</option>
+                <option value="Uasin Gishu">Uasin Gishu</option>
+                <option value="Vihiga">Vihiga</option>
+                <option value="Wajir">Wajir</option>
+                <option value="West Pokot">West Pokot</option>
+            </select><br>
+            
+            <!-- Market Field (Initially empty) -->
+            <label for="market">Market:</label>
+            <select id="market" name="market" required>
+                <option value="">Select a market</option>
+            </select><br>
+            
+            <!-- Date Field -->
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required><br>
+            
+            <!-- Product Field with Options -->
+            <label for="product">Product:</label>
+            <select id="product" name="product" required>
+                <option value="">Select a product</option>
+                <option value="beans">Beans</option>
+                <option value="maize">Dry Maize</option>
+                <option value="onions">Onions</option>
+                <option value="rice">Rice</option>
+            </select><br>
+            
+            <!-- Wholesale Price Field -->
+            <label for="wholesale_price">Wholesale Price:</label>
+            <input type="number" id="wholesale_price" name="wholesale_price" required><br>
+            
+            <!-- Submit Button -->
+            <button type="submit">Predict Price</button>
+        </form>
+        
+        {% if prediction %}
+        <!-- Display Prediction Result -->
+        <div class="result">
+            <p>The predicted price for {{ prediction.market }} in {{ prediction.county }} on {{ prediction.date }} is {{ prediction.wholesale_price }}.</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- JavaScript for Dynamic Market Options -->
+    <script>
+        const countySelect = document.getElementById('county');
+        const marketSelect = document.getElementById('market');
+
+        // Define market options based on county selection
+        const marketsByCounty = {
+            'Nairobi': ['Nairobi Wakulima', 'Nyamakima', 'Gikomba', 'Kangemi Market'],
+            // Add options for other counties and their corresponding markets
+            'Siaya': ['Akala', 'Aram', 'Bondo'],
+            'Nakuru': ['Nakuru Wakulima'],
+            'Eldoret': ['Eldoret Main'],
+            'Kisumu': ['Kibuye'],
+            'Mombasa': ['Kongowea'],
+            'Malindi': ['Malindi Old Market'],
+            'Kitale': ['Kitale Municipality Market'],
+            'Kisii': ['Daraja Mbili', 'Ngurubani Market'],
+            'Vihiga': ['Cheptulu'],
+            'TharakaNithi': ['Chuka'],
+            'Kwale': ['Diani Market'],
+            'Migori': ['Rongo'],
+            'Busia': ['Busia Market'],
+            'Nyandarua': ['Soko Mpya'],
+            'Garissa': ['Garissa Soko Mugdi'],
+            'Kirinyaga': ['Kagio'],
+            'Embu': ['Embu Town']
+        };
+
+        // Function to update market options based on county selection
+        function updateMarketOptions() {
+            const selectedCounty = countySelect.value;
+            marketSelect.innerHTML = ''; // Clear previous options
+
+            const markets = marketsByCounty[selectedCounty];
+            if (markets) {
+                markets.forEach(market => {
+                    const option = document.createElement('option');
+                    option.value = market;
+                    option.text = market;
+                    marketSelect.appendChild(option);
+                });
+            } else {
+                const option = document.createElement('option');
+                option.text = 'No markets available';
+                marketSelect.appendChild(option);
+            }
+        }
+
+        // Initial call to populate markets based on default county selection
+        updateMarketOptions();
+    </script>
+</body>
+</html>

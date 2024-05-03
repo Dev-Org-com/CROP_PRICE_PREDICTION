@@ -3,28 +3,28 @@ This project analyzes wholesale food prices in Kenya, specifically for various c
 
 ## Table of Contents
 
-- [Features](#features)
-- [Authors](#Authors)
-- [Usage](#Usage)
-- [Installation](#installation)
-- [Data Description](#Data-Description)
-- [Data Preprocessing](#Data-Preprocessing)
-- [Analysis and Visualization](#Analysis-and-Visualization)
-- [Contributing](#contributing)
-## Features
+- [FEATURES](#FEATURES)
+- [INTRODUCTION](#INTRODUCTION)
+- [BUSINESS UNDERSTANDING](#BUSINESS-UNDERSTANDING)
+- [STAKEHOLDERS](#STAKEHOLDERS)
+- [PROBLEM STATEMENT](#PROBLEM-STATEMENT)
+- [OBJECTIVES](#OBJECTIVES)
+- [DATA DESCRIPTION](#DATA-DESCRIPTION)
+- [DATA PREPROCESSING](#DATA-PREPROCESSING)
+- [ANALYSIS AND VISUALIZATION](#ANALYSIS-AND-VISUALIZATION)
+- [USAGE](#USAGE)
+- [INSTALLATION](#INSTALLATION)
+- [CONTRIBUTING](#CONTRIBUTING)
+- [AUTHORS](#AUTHORS)
+
+## FEATURES
 - Data cleaning and preprocessing
 - Exploratory data analysis (EDA)
 - Feature engineering
 - Outlier detection and removal
 - Data visualization
 - Machine learning model
-## Authors
-- Milton Kabute
-- Collins Cheruiyot
-- Thorne Makau
-- Joyce Muthiani
-- Kenneth Karanja
-- Amina Hagi
+
 
 ![alt text](<crop prediction image.jpg>)
 
@@ -39,12 +39,13 @@ From data collecting and cleansing to advanced analytics and predictive modeling
 Datawise Solutions believes that the power of data is infinite. Let us be your reliable partner on the path to data-driven success.
 
 Explore the possibilities with Datawise Solutions today!
+
 ## BUSINESS UNDERSTANDING 
 According to a Business Daily article, Kenyan farmers earn less even while consumers pay more for food products since there is a significant price difference between farmers' and consumer pricing. Kenyan farmers' commodity prices are influenced by an inefficient market structure and intermediaries between producers and buyers. It is highlighted that middlemen determine market dynamics, resulting in divergent wholesale and retail prices in Kenyan markets. However, external variables such as subsidy schemes and currency fluctuations have influenced farmers' commodity prices, yet farmers continue to earn less than the market price established in Kenyan stores and markets.
 
 According to the KARI research, agricultural productivity is declining due to limited market access.
 
-## Stakeholders
+## STAKEHOLDERS
 
 1.Kenya Farmers Association
 
@@ -57,6 +58,7 @@ According to the KARI research, agricultural productivity is declining due to li
 5.Financial Institutions
 
 6.Consumers
+
 ## PROBLEM STATEMENT
 Farmers in Kenya frequently face huge differences between the prices they receive for their commodities and the amounts consumers pay in marketplaces. This disparity is mostly caused by inefficient market systems and the presence of intermediaries that profit from pricing inconsistencies. As a result, farmers struggle to obtain reasonable rates for their produce, despite the fact that agriculture is an important component of the country's GDP and a source of income for many people. To address this issue, a complete price forecasting system that uses historical and real-time data, as well as machine learning models, is urgently needed. Such a technology would provide farmers with forecast pricing updates, improve market transparency, and allow all players in the agricultural value chain to make informed decisions.
 ## OBJECTIVES 
@@ -67,7 +69,8 @@ Developing a user-friendly interface for farmers to receive predicted pricing up
 Using historical agricultural commodity prices and CBK currency data to create accurate forecasting models.
 
 Farmers will receive training and support in order to efficiently use the price forecasting system.
-## Data Description
+
+## DATA DESCRIPTION
 The dataset contains the following columns:
 - Date: The date of the exchange rate data.
 - Price: The closing price of USD to KES exchange rate on that date.
@@ -85,7 +88,7 @@ The dataset contains the following columns:
 - Additional engineered features: Ratio of supply volume to wholesale price, one-hot encoded product and market location, date-time features, lag features, rolling window statistics, and differenced features.
 
 
-## Data Preprocessing
+## DATA PREPROCESSING
 The preprocessing steps include:
 
 - Cleaning the data by removing outliers and irrelevant entries
@@ -94,7 +97,7 @@ The preprocessing steps include:
 - Extracting date-time features and creating lag features
 - Normalizing numerical features
 
-## Analysis and Visualization
+## ANALYSIS AND VISUALIZATION
 The analysis and visualization techniques employed in this project include:
 
 - Boxplots to visualize price distributions by product and county
@@ -134,14 +137,15 @@ The values range from -1 to 1, where:
 
 
 
-## Usage
+## USAGE
 1. Clone the repository.
 
           git clone git@github.com:pseudocmd/Phase5-project.git
 3. Install the required dependencies.
 4. Run the Jupyter Notebook or Python script to execute the code.
 5. Follow the instructions and comments in the code for specific tasks or analyses.
-## Installation
+
+## INSTALLATION
 To run the code in this project, you'll need:
 - Python 3
 - numpy
@@ -153,7 +157,7 @@ You can install the dependencies using pip:
 
       pip install pandas numpy matplotlib seaborn scikit-learn
 
-## Contributing
+## CONTRIBUTING
 We welcome contributions from the community. If you'd like to contribute to this project, please follow these steps:
 
 ### Fork the repository.
@@ -170,7 +174,7 @@ We welcome contributions from the community. If you'd like to contribute to this
    
 4. Create a pull request.
 
-## Authors
+## AUTHORS
 - Milton Kabute
 - Collins Cheruiyot
 - Thorne Makau

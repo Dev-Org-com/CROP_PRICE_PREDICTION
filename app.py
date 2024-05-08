@@ -68,7 +68,7 @@ for col in categorical_columns:
         options = ['Bean', 'Dry Maize', 'Onion','Rice']  # Add all relevant options for 'Product'
     elif col == 'Market Location':
         options = markets  # Example market locations
-    user_input[col] = st.selectbox(f"Select {col}", ['Select...'] + options)
+    user_input[col] = st.selectbox(f" {col}", ['..'] + options)
 
 for col in numerical_columns:
     user_input[col] = st.number_input(col)

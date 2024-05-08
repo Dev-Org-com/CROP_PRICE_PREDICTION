@@ -25,7 +25,7 @@ counties = [
 ]
 
 markets = [
-    'Akala', 'Aram', 'Bondo', 'Nakuru Wakulima', 'Eldoret Main', 'Kibuye', 'Kongowea',
+    'Akala', 'Aram', 'Bondo', 'Nakuru Wakulima', 'Eldoret Main', 'Kibuye', 'Kongowea','Nairobi Wakulima', 'Nyamakima', 'Gikomba', 'Kangemi Market',
     'Malindi Old Market', 'Kitale Municipality Market', 'Daraja Mbili', 'Ngurubani Market',
     'Cheptulu', 'Chuka', 'Diani Market', 'Rongo', 'Busia Market', 'Soko Mpya',
     'Garissa Soko Mugdi', 'Kagio', 'Embu Town'

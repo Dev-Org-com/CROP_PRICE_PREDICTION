@@ -104,8 +104,6 @@ The analysis and visualization techniques employed in this project include:
 - Scatter plots to explore relationships between price, supply volume, and USD rate
 - Line charts to visualize trends over time for price and USD rate
 - Statistical analysis to identify correlations and trends
-![alt text](image.png)
-
 
 ![alt text](image-1.png)
 

@@ -134,6 +134,36 @@ The values range from -1 to 1, where:
 
 ![alt text](image-5.png)
 
+Modelling
+For this project we explored the following models:
+
+     1.Linear Regression 
+     
+     2.Forest modeling 
+     
+     3.XGBoost model 
+     
+     4. Decision Tree
+XGBoost model outperformed Linear Regression, Random Forest, and 
+
+Decision Tree Model showcasing its effectiveness in this analysis.
+
+Note: The code for the models can be found in the  notebooks folder.
+
+Conclusion and Recommendations
+
+In conclusion, this project has successfully achieved its objectives of developing a comprehensive price forecasting system for the Kenyan agricultural market. Through the implementation of machine learning models and strategic analysis, we have empowered farmers with predictive pricing updates and enhanced market transparency. Our focus on strategic crops has provided valuable insights into market dynamics and opportunities for growth. Moving forward, we are poised to continue driving positive change within the agricultural sector, promoting resilience and sustainability for farmers and stakeholders alike.
+
+Recommendations 
+
+Based on our analysis and findings, we recommend the following actions:
+
+1.Implementation of Predictive Pricing System: Deploy the developed machine learning models to provide farmers with predictive pricing updates, enabling them to make informed decisions regarding resource allocation and market positioning.
+
+2.Enhanced Market Transparency: Collaborate with government agencies and agricultural traders to promote market transparency and fair pricing practices, thereby reducing the influence of intermediaries and ensuring farmers receive fair prices for their produce.
+
+3.Continuous Monitoring and Evaluation: Regularly monitor and evaluate the performance of the price forecasting system to ensure accuracy and relevance. Incorporate feedback from stakeholders to improve the system's effectiveness over time.
+
 
 
 

@@ -105,8 +105,7 @@ The analysis and visualization techniques employed in this project include:
 - Line charts to visualize trends over time for price and USD rate
 - Statistical analysis to identify correlations and trends
 
-![alt text](image-1.png)
-
+This visual shows the distribution of the ccounties in the dataset
 
 ![alt text](image-2.png)
 
@@ -144,6 +143,9 @@ For this project we explored the following models:
      3.XGBoost model 
      
      4. Decision Tree
+![image](https://github.com/Dev-Org-com/CROP_PRICE_PREDICTION/assets/118039822/b220328e-e129-4879-a176-ed3aba2f0037)
+
+
 XGBoost model outperformed Linear Regression, Random Forest, and Decision Tree Model showcasing its effectiveness in this analysis.
 
 Note: The code for the models can be found in the  notebooks folder.

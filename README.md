@@ -104,11 +104,8 @@ The analysis and visualization techniques employed in this project include:
 - Scatter plots to explore relationships between price, supply volume, and USD rate
 - Line charts to visualize trends over time for price and USD rate
 - Statistical analysis to identify correlations and trends
-![alt text](image.png)
 
-
-![alt text](image-1.png)
-
+This visual shows the distribution of the ccounties in the dataset
 
 ![alt text](image-2.png)
 
@@ -135,9 +132,79 @@ The values range from -1 to 1, where:
 ![alt text](image-5.png)
 
 
+**MODELLING**
+
+For this project we explored the following models:
+
+     1.Linear Regression 
+     
+     2.Forest modeling 
+     
+     3.XGBoost model 
+     
+     4. Decision Tree
+![image](https://github.com/Dev-Org-com/CROP_PRICE_PREDICTION/assets/118039822/b220328e-e129-4879-a176-ed3aba2f0037)
+
+XGBoost model outperformed Linear Regression, Random Forest, and Decision Tree Model showcasing its effectiveness in this analysis.
+
+**Based on these perfromance metrics**
+
+Lower values of RMSE, MSE, MAE, and MAPE indicate better performance of the models
+
+XGBoost has the lowest values for all metrics, followed closely by Random Forest.
+
+Linear Regression and Decision Tree have significantly higher values compared to XGBoost and Random Forest.
+Therefore, XGBoost seems to perform the best among the models evaluated here, followed closely by Random Forest.
+Note: The code for the models can be found in the  notebooks folder.
 
 
-## USAGE
+**Deployment**
+
+The deployment interface allows users to insert the location, usd_rate , date and supply volume to predict the wholesale price of the crops in various market locations in Kenya.
+![image](https://github.com/Dev-Org-com/CROP_PRICE_PREDICTION/assets/118039822/98c954ab-2306-4c33-b8bf-c23701308db5)
+
+
+**CONCLUSION**
+
+The interpretation of results from the comparison of different machine learning models in agricultural markets underscores the critical role of data-driven insights in shaping decision-making processes and driving positive outcomes. Agriculture is inherently influenced by various factors such as weather patterns, soil conditions, market demand, and governmental policies. Therefore, having accurate predictive models can provide invaluable guidance to stakeholders involved in agricultural activities.
+
+**RECOMMENDATIONS**
+
+**Seasonal Planning**
+
+Farmers and traders analyze historical data to identify seasonal trends in demand and pricing for crops.
+Crop rotation and timing are planned to optimize yields based on these trends.
+Marketing strategies are adjusted during peak seasons to maximize profits.
+
+**Diversification Strategies**
+
+Farmers diversify crop portfolios to spread risks related to price volatility and climate uncertainties.
+Exploring new markets and adding value to products can reduce dependency on fluctuating prices.
+
+**Policy Interventions**
+
+Governments implement price stabilization mechanisms (e.g., price floors, subsidies) to protect farmers and maintain affordable prices.
+Market information systems empower informed decision-making and reduce information asymmetry.
+Infrastructure development enhances market access and reduces losses.
+
+**Investment Opportunities**
+
+Investors can explore value chain investments (production, processing, storage, transportation, marketing) to contribute to sectoral growth.
+Analyzing regional market dynamics helps identify high-growth markets.
+Technology-driven solutions improve productivity and sustainability.
+
+**Implementation of Predictive Pricing System** 
+Deploy the developed machine learning models to provide farmers with predictive pricing updates, enabling them to make informed decisions regarding resource allocation and market positioning.
+Enhanced Market Transparency: Collaborate with government agencies and agricultural traders to promote market transparency and fair pricing practices, thereby reducing the influence of intermediaries and ensuring farmers receive fair prices for their produce.
+**Continuous Monitoring and Evaluation** 
+
+Regularly monitor and evaluate the performance of the price forecasting system to ensure accuracy and relevance. Incorporate feedback from stakeholders to improve the system's effectiveness over time.
+
+**Training to Enumerators**
+On future use and improvement of the model, we recommend that enumrators collect the actual supply volume of crops in the markets for accurate prediction of the prices, to allow farmers leap best profits in their agricultural activites.
+
+
+## **USAGE**
 1. Clone the repository.
 
           git clone git@github.com:pseudocmd/Phase5-project.git
@@ -174,7 +241,7 @@ We welcome contributions from the community. If you'd like to contribute to this
    
 4. Create a pull request.
 
-## AUTHORS
+## AUTHORS 🧑‍🤝‍🧑
 - Milton Kabute
 - Collins Cheruiyot
 - Thorne Makau

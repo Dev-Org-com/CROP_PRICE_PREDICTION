@@ -134,7 +134,7 @@ The values range from -1 to 1, where:
 
 ![alt text](image-5.png)
 
-**MODELLING**
+**#MODELLING**
 
 For this project we explored the following models:
 
@@ -149,11 +149,11 @@ XGBoost model outperformed Linear Regression, Random Forest, and Decision Tree M
 
 Note: The code for the models can be found in the  notebooks folder.
 
-**CONCLUSION AND RECOMMENDATIONS** 
+**#CONCLUSION AND RECOMMENDATIONS** 
 
 In conclusion, this project has successfully achieved its objectives of developing a comprehensive price forecasting system for the Kenyan agricultural market. Through the implementation of machine learning models and strategic analysis, we have empowered farmers with predictive pricing updates and enhanced market transparency. Our focus on strategic crops has provided valuable insights into market dynamics and opportunities for growth. Moving forward, we are poised to continue driving positive change within the agricultural sector, promoting resilience and sustainability for farmers and stakeholders alike.
 
-**RECOMMENDATIONS**
+**#RECOMMENDATIONS**
 
 Based on our analysis and findings, we recommend the following actions:
 

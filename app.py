@@ -1,77 +1,69 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 from sklearn.preprocessing import OneHotEncoder
 import joblib
-import warnings
 
 # Load the saved model
-finalized_xgboost_model = joblib.load('finalized_xgboost_model .pkl')
+finalized_xgboost_model = joblib.load('finalized_xgboost_models.pkl')
 
-# Define feature names
+# Define feature names for prediction
 categorical_columns = ['Product', 'Market Location', 'County']
-numerical_columns = ['Supply Volume', 'usd_rate', 'Year', 'Month', 'Day']
+# Excluding 'Supply Volume' from prediction model input
+numerical_columns = ['usd_rate']
 
-# List of counties in Kenya
-counties = [
-    "Busia",  "Embu","Garissa", "Kilifi", "Kirinyaga", "Kisii", "Kisumu", "Kwale", "Migori", "Mombasa", "Nairobi", 
-    "Nakuru", "Nyandarua", "Nyeri", 
-     "Siaya", "TharakaNithi", "Uasin Gishu"
-]
-
-markets = [
-    'Akala', 'Aram', 'Bondo', 'Nakuru Wakulima', 'Eldoret Main', 'Kibuye', 'Kongowea','Nairobi Wakulima', 'Nyamakima', 'Gikomba', 'Kangemi Market',
-    'Malindi Old Market', 'Kitale Municipality Market', 'Daraja Mbili', 'Ngurubani Market',
-    'Cheptulu', 'Chuka', 'Diani Market', 'Rongo', 'Busia Market', 'Soko Mpya',
-    'Garissa Soko Mugdi', 'Kagio', 'Embu Town'
-]
+# List of counties in Kenya and market options
+counties = ["Busia", "Embu", "Kitale", "Garissa", "Nairobi", "Kajiado", "Kiambu", "Kilifi", "Kirinyaga", "Kisii", "Kisumu", "Migori", "Mombasa", "Nairobi", "Nakuru", "Nandi", "Narok", "Nyandarua", "Siaya", "TharakaNithi", "Vihiga"]
+markets = ['Akala', 'Aram', 'Bondo', 'Nakuru Wakulima', "Gikomba", 'Eldoret Main', 'Kibuye', 'Kongowea', 'Malindi Old Market', 'Kitale Municipality Market', 'Daraja Mbili', 'Ngurubani Market', 'Cheptulu', 'Chuka', 'Diani Market', 'Rongo', 'Busia Market', 'Soko Mpya', 'Garissa Soko Mugdi', 'Kagio', 'Embu Town']
 
 def predict_wholesale_price(user_input):
     """Performs prediction using the XGBoost model."""
-    # Convert user input to DataFrame
     df = pd.DataFrame([user_input])
-
-    # One-hot encode categorical features
+    
+    # Encode categorical features
     encoder = OneHotEncoder()
-    encoded_categories = encoder.fit_transform(df[categorical_columns]).toarray()
-    feature_labels = encoder.get_feature_names_out(categorical_columns)
+    encoder.fit(df[categorical_columns])  # Fitting the encoder dynamically, not recommended for production
+    encoded_categories = encoder.transform(df[categorical_columns]).toarray()
+    feature_labels = encoder.get_feature_names_out()
     encoded_df = pd.DataFrame(encoded_categories, columns=feature_labels)
-
-    # Combine with numerical features
-    df_encoded = pd.concat([encoded_df, df[numerical_columns]], axis=1)
-
-    # Ensure all expected features are present (the model's training features)
-    expected_features = np.array(finalized_xgboost_model.get_booster().feature_names)
-    missing_cols = set(expected_features) - set(df_encoded.columns)
+    
+    # Include numerical features (excluding Supply Volume) and date-related features
+    for col in numerical_columns + ['Year', 'Month', 'Day']:
+        encoded_df[col] = df[col]
+    
+    # Fill missing model features with zeros
+    missing_cols = set(finalized_xgboost_model.get_booster().feature_names) - set(encoded_df.columns)
     for col in missing_cols:
-        df_encoded[col] = 0  # Assuming zero-filling for missing features
+        encoded_df[col] = 0
 
-    df_encoded = df_encoded[expected_features]
-
-    # Make prediction
-    prediction = finalized_xgboost_model.predict(df_encoded)
+    encoded_df = encoded_df[finalized_xgboost_model.get_booster().feature_names]
+    prediction = finalized_xgboost_model.predict(encoded_df)
     return prediction[0]
 
 # Streamlit app layout
 st.title("Wholesale Price Prediction")
+selected_date = st.date_input("Date", value=pd.to_datetime('today'))
+user_input = {
+    'Year': selected_date.year,
+    'Month': selected_date.month,
+    'Day': selected_date.day
+}
 
-user_input = {}
+# Collecting user input for categorical and numerical features
 for col in categorical_columns:
-    if col == 'County':
-        options = counties  # Use the list of counties for the 'County' selection
-    elif col == 'Product':
-        options = ['Bean', 'Dry Maize', 'Onion','Rice']  # Add all relevant options for 'Product'
-    elif col == 'Market Location':
-        options = markets  # Example market locations
-    user_input[col] = st.selectbox(f" {col}", ['..'] + options)
+    options = counties if col == 'County' else (['Bean', 'Dry Maize', 'Onion', 'Rice'] if col == 'Product' else markets)
+    user_input[col] = st.selectbox(f"{col}", ['...'] + options)
 
-for col in numerical_columns:
-    user_input[col] = st.number_input(col)
+# Collecting usd_rate as it's used in the model
+user_input['usd_rate'] = st.number_input('Enter USD Rate')
+
+# Collecting Supply Volume for logging or reporting, but not for prediction
+supply_volume = st.number_input('Enter Supply Volume', value=0.0, format="%.2f")
 
 if st.button("Predict Wholesale Price"):
     try:
         predicted_price = predict_wholesale_price(user_input)
-        st.success(f"Predicted Wholesale Price: ksh{predicted_price:.2f} per KG")
+        st.success(f"Predicted Wholesale Price: Ksh {predicted_price:.2f} per KG")
+        st.write(f"Supply Volume collected for records: {supply_volume} units")  # Optionally display supply volume
     except Exception as e:
         st.error(f"An error occurred: {e}")
 

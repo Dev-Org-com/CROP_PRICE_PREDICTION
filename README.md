@@ -135,6 +135,7 @@ The values range from -1 to 1, where:
 ![alt text](image-5.png)
 
 Modelling
+
 For this project we explored the following models:
 
      1.Linear Regression 
@@ -144,9 +145,7 @@ For this project we explored the following models:
      3.XGBoost model 
      
      4. Decision Tree
-XGBoost model outperformed Linear Regression, Random Forest, and 
-
-Decision Tree Model showcasing its effectiveness in this analysis.
+XGBoost model outperformed Linear Regression, Random Forest, and Decision Tree Model showcasing its effectiveness in this analysis.
 
 Note: The code for the models can be found in the  notebooks folder.
 

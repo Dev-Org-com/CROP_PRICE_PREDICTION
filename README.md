@@ -145,10 +145,23 @@ For this project we explored the following models:
      4. Decision Tree
 ![image](https://github.com/Dev-Org-com/CROP_PRICE_PREDICTION/assets/118039822/b220328e-e129-4879-a176-ed3aba2f0037)
 
-
 XGBoost model outperformed Linear Regression, Random Forest, and Decision Tree Model showcasing its effectiveness in this analysis.
 
+**Based on these perfromance metrics**
+
+Lower values of RMSE, MSE, MAE, and MAPE indicate better performance of the models
+
+XGBoost has the lowest values for all metrics, followed closely by Random Forest.
+
+Linear Regression and Decision Tree have significantly higher values compared to XGBoost and Random Forest.
+Therefore, XGBoost seems to perform the best among the models evaluated here, followed closely by Random Forest.
 Note: The code for the models can be found in the  notebooks folder.
+
+
+**Deployment**
+
+The deployment interface allows users to insert the location, usd_rate , date and supply volume to predict the wholesale price of the crops in various market locations in Kenya.
+![image](https://github.com/Dev-Org-com/CROP_PRICE_PREDICTION/assets/118039822/98c954ab-2306-4c33-b8bf-c23701308db5)
 
 
 **CONCLUSION AND RECOMMENDATIONS**
@@ -157,32 +170,41 @@ The interpretation of results from the comparison of different machine learning 
 
 **RECOMMENDATIONS**
 
-Seasonal Planning:
+**Seasonal Planning**
 
 Farmers and traders analyze historical data to identify seasonal trends in demand and pricing for crops.
 Crop rotation and timing are planned to optimize yields based on these trends.
 Marketing strategies are adjusted during peak seasons to maximize profits.
-Diversification Strategies:
+
+**Diversification Strategies**
 
 Farmers diversify crop portfolios to spread risks related to price volatility and climate uncertainties.
 Exploring new markets and adding value to products can reduce dependency on fluctuating prices.
 
-Policy Interventions:
+**Policy Interventions**
 
 Governments implement price stabilization mechanisms (e.g., price floors, subsidies) to protect farmers and maintain affordable prices.
 Market information systems empower informed decision-making and reduce information asymmetry.
 Infrastructure development enhances market access and reduces losses.
 
-Investment Opportunities:
+**Investment Opportunities**
 
 Investors can explore value chain investments (production, processing, storage, transportation, marketing) to contribute to sectoral growth.
 Analyzing regional market dynamics helps identify high-growth markets.
 Technology-driven solutions improve productivity and sustainability.
 
+**Implementation of Predictive Pricing System** 
+Deploy the developed machine learning models to provide farmers with predictive pricing updates, enabling them to make informed decisions regarding resource allocation and market positioning.
+Enhanced Market Transparency: Collaborate with government agencies and agricultural traders to promote market transparency and fair pricing practices, thereby reducing the influence of intermediaries and ensuring farmers receive fair prices for their produce.
+**Continuous Monitoring and Evaluation** 
+
+Regularly monitor and evaluate the performance of the price forecasting system to ensure accuracy and relevance. Incorporate feedback from stakeholders to improve the system's effectiveness over time.
+
+**Training to Enumerators**
+On future use and improvement of the model, we recommend that enumrators collect the actual supply volume of crops in the markets for accurate prediction of the prices, to allow farmers leap best profits in their agricultural activites.
 
 
-
-## USAGE
+## **USAGE**
 1. Clone the repository.
 
           git clone git@github.com:pseudocmd/Phase5-project.git

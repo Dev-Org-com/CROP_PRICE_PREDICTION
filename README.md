@@ -164,7 +164,7 @@ The deployment interface allows users to insert the location, usd_rate , date an
 ![image](https://github.com/Dev-Org-com/CROP_PRICE_PREDICTION/assets/118039822/98c954ab-2306-4c33-b8bf-c23701308db5)
 
 
-**CONCLUSION AND RECOMMENDATIONS**
+**CONCLUSION**
 
 The interpretation of results from the comparison of different machine learning models in agricultural markets underscores the critical role of data-driven insights in shaping decision-making processes and driving positive outcomes. Agriculture is inherently influenced by various factors such as weather patterns, soil conditions, market demand, and governmental policies. Therefore, having accurate predictive models can provide invaluable guidance to stakeholders involved in agricultural activities.
 
